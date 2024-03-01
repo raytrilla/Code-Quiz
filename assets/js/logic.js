@@ -50,9 +50,11 @@ function displayQuestion() {
 function handleAnswer(index) {
     if (isAnswerCorrect(index)) {
         correctAnswers++; // Increment correct answers count
+        playCorrectSound();
     } else {
         time -= 10; // Subtract 10 seconds for incorrect answer
         if (time < 0) time = 0; // Ensure time doesn't go negative
+        playIncorrectSound();
         document.getElementById('time').textContent = time; // Update timer display
     }
 
@@ -63,6 +65,18 @@ function handleAnswer(index) {
     } else {
         endQuiz();
     }
+}
+
+// Function to play the correct sound effect
+function playCorrectSound() {
+    const correctSound = document.getElementById("correctSound");
+    correctSound.play();
+}
+
+// Function to play the incorrect sound effect
+function playIncorrectSound() {
+    const incorrectSound = document.getElementById("incorrectSound");
+    incorrectSound.play();
 }
 
 // Function to end the quiz

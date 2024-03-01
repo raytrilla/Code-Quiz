@@ -8,6 +8,9 @@ function startQuiz() {
     document.getElementById('start-screen').classList.add('hide');
     document.getElementById('questions').classList.remove('hide');
 
+    // Show feedback element
+    document.getElementById('feedback').classList.remove('hide');
+
     // Start timer
     startTimer();
 
@@ -38,7 +41,7 @@ function displayQuestion() {
 
     currentQuestion.answers.forEach((answer, index) => {
         const button = document.createElement('button');
-        button.textContent = answer;
+        button.textContent = `${index + 1}. ${answer}`;
         button.addEventListener('click', function() {
             handleAnswer(index);
         });
@@ -51,10 +54,12 @@ function handleAnswer(index) {
     if (isAnswerCorrect(index)) {
         correctAnswers++; // Increment correct answers count
         playCorrectSound();
+        displayFeedback('Correct!');
     } else {
         time -= 10; // Subtract 10 seconds for incorrect answer
         if (time < 0) time = 0; // Ensure time doesn't go negative
         playIncorrectSound();
+        displayFeedback('Incorrect.');
         document.getElementById('time').textContent = time; // Update timer display
     }
 
@@ -65,6 +70,13 @@ function handleAnswer(index) {
     } else {
         endQuiz();
     }
+}
+
+// Function to display feedback
+function displayFeedback(message) {
+    const feedbackElement = document.getElementById('feedback');
+    feedbackElement.textContent = message;
+    feedbackElement.classList.remove('hide'); // Ensure feedback is visible
 }
 
 // Function to play the correct sound effect

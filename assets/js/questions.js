@@ -51,7 +51,7 @@ const questions = [
         correctIndex: 1
     }
 ];
-
+let currentQuestionIndex = 0; // Initialize to the first question
 // Function to display current question
 function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];

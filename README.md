@@ -11,7 +11,11 @@ The Code Quiz is built to meet the following criteria:
 * The quiz should end when all questions are answered or the timer reaches 0.
 * When the game ends, it should display their score and give the user the ability to save their initials and their score.
 
-Live Weather Dashboard link
+Instead of including individual screenshots, I've attached a video example of the application at work:
+[Coding Quiz.webm](https://github.com/raytrilla/Code-Quiz/assets/151631423/52031144-e9cc-41f2-869b-578ae3f28f9c)
 
+Live Appication link:
+https://raytrilla.github.io/Code-Quiz/
 
-Github repository Link
+Github repository Link:
+https://github.com/raytrilla/Code-Quiz

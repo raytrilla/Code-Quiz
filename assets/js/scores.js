@@ -11,7 +11,7 @@ function printHighscores() {
 
     highscores.forEach(function(score, index) {
         const liTag = document.createElement("li");
-        liTag.textContent = `Initials: ${score.initials}, Score: ${score.score}`;
+        liTag.textContent = `${score.initials} - ${score.score}`;
         scoreStorage.appendChild(liTag);
     });
 }
